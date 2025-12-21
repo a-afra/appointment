@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'djoser',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -123,6 +124,10 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Auth configs
+
+AUTH_USER_MODEL = "accounts.User"
+
 # REST framework configs
 
 REST_FRAMEWORK = {
@@ -138,5 +143,6 @@ SIMPLE_JWT = {
 # Djoser configs
 
 DJOSER = {
-    "TOKEN_MODEL": None
+    "LOGIN_FIELD": "email",
+    "TOKEN_MODEL": None,
 }
