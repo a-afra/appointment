@@ -1,0 +1,30 @@
+repos:
+-   repo: https://github.com/PyCQA/isort
+    rev: 5.13.2
+    hooks:
+    -   id: isort
+        args: ["--profile", "black"]
+        exclude: "migrations/"
+        
+-   repo: https://github.com/psf/black
+    rev: 24.8.0
+    hooks:
+    -   id: black
+        exclude: "migrations/"
+
+-   repo: https://github.com/PyCQA/flake8
+    rev: 7.0.0
+    hooks:
+    -   id: flake8
+        additional_dependencies:
+        -   pep8-naming
+        args: ["--ignore=F403"]
+        exclude: "(migrations/|settings/|settings\\.py)"
+
+# -   repo: local
+#     hooks:
+#     -   id: django-test
+#         name: run django tests
+#         entry: python manage.py test
+#         language: system
+#         pass_filenames: false

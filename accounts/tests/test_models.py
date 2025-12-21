@@ -1,7 +1,8 @@
 import uuid as uuid_lib
-from django.test import TestCase
+
 from django.contrib.auth import get_user_model
 from django.db import IntegrityError
+from django.test import TestCase
 
 User = get_user_model()
 
@@ -24,7 +25,7 @@ class UserModelTests(TestCase):
         )
 
         self.assertEqual(user.username, "user@example.com")
-    
+
     def test_username_updates_when_email_changes(self):
         user = User.objects.create_user(
             email="old@example.com",
@@ -36,7 +37,7 @@ class UserModelTests(TestCase):
 
         user.refresh_from_db()
         self.assertEqual(user.username, "new@example.com")
-    
+
     def test_uuid_is_created(self):
         user = User.objects.create_user(
             email="user@example.com",
@@ -57,6 +58,3 @@ class UserModelTests(TestCase):
                 email="unique@example.com",
                 password="password",
             )
-
-
-
