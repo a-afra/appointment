@@ -18,7 +18,7 @@ repos:
     -   id: flake8
         additional_dependencies:
         -   pep8-naming
-        args: ["--ignore=F403"]
+        args: ["--max-line-length=100", "--ignore=F403"]
         exclude: "(migrations/|settings/|settings\\.py)"
 
 # -   repo: local
