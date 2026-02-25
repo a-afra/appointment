@@ -18,7 +18,7 @@
 
 ### 4. Environment Variables
 
-Fill the `.env` file based on `.env.sample` and provide all required
+Fill the `.env.dev` file based on `.env.dev.sample` and provide all required
 environment variables needed by `settings.py` (e.g., SECRET_KEY,
 DEBUG, DATABASE configuration, etc.).
 
@@ -33,7 +33,7 @@ are missing.
 
     python manage.py runserver
 
-------------------------------------------------------------------------
+---
 
 ## Authentication (Djoser + JWT)
 
@@ -44,20 +44,18 @@ Base path:
 ### User Management Endpoints
 
 | Method | Endpoint        |
-|--------|-----------------|
+| ------ | --------------- |
 | POST   | /auth/users/    |
 | GET    | /auth/users/me/ |
 
-
 ### JWT Endpoints
 
-| Method | Endpoint        |
-|--------|-----------------|
-| POST   | /auth/jwt/create/    |
+| Method | Endpoint           |
+| ------ | ------------------ |
+| POST   | /auth/jwt/create/  |
 | GET    | /auth/jwt/refresh/ |
 
-
-------------------------------------------------------------------------
+---
 
 ## pre-commit Setup
 
@@ -68,8 +66,9 @@ Enable hooks:
 pre-commit ensures formatting, linting, and quality checks before
 commits.
 
-------------------------------------------------------------------------
-------------------------------------------------------------------------
+---
+
+---
 
 # Git Branching Strategy
 
@@ -77,18 +76,18 @@ commits.
 
 ### main
 
--   Production-ready code only
--   Always stable
--   Tagged for releases (e.g., v1.0.0)
--   No direct commits allowed
+- Production-ready code only
+- Always stable
+- Tagged for releases (e.g., v1.0.0)
+- No direct commits allowed
 
 ### develop
 
--   Integration branch
--   All features and fixes merge here first
--   Must remain runnable at all times
+- Integration branch
+- All features and fixes merge here first
+- Must remain runnable at all times
 
-------------------------------------------------------------------------
+---
 
 ## Branch Naming Convention
 
@@ -104,7 +103,7 @@ Example:
 
 Used for new features or enhancements.
 
-------------------------------------------------------------------------
+---
 
 ### Fix Branch
 
@@ -116,7 +115,7 @@ Example:
 
 Used for bug fixes.
 
-------------------------------------------------------------------------
+---
 
 ### Hotfix Branch (Production Critical)
 
@@ -126,13 +125,14 @@ Examples:
 
     hotfix/security-patch
 
-Rules: 
+Rules:
+
 - Branch from `main`
 - Merge into `main`
-- Also merge into `develop` 
+- Also merge into `develop`
 - Tag new version
 
-------------------------------------------------------------------------
+---
 
 ## Development Workflow
 
@@ -148,14 +148,14 @@ Rules:
 
 Open a Pull Request and merge into `develop`.
 
-------------------------------------------------------------------------
+---
 
 ## Rules
 
--   Never commit directly to `main`
--   Never develop directly on `main`
--   Always branch from `develop`
--   Always use Pull Requests
--   Write meaningful commit messages
+- Never commit directly to `main`
+- Never develop directly on `main`
+- Always branch from `develop`
+- Always use Pull Requests
+- Write meaningful commit messages
 
-------------------------------------------------------------------------
+---
